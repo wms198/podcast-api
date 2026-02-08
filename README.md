@@ -130,3 +130,7 @@ Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
 #### g代表genarate
 
 #### s代表service
+
+### install class-transformer
+
+#### npm install class-validator class-transformer
