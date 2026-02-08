@@ -2,7 +2,7 @@ import { Body, Controller, Post, Get, Query, Param, HttpException, HttpStatus, N
 import { EpisodesService } from './episodes.service';
 import { CreateEpisodeDto } from './dto/create-episode.dto';
 import { ConfigService } from '../config/config.service';
-
+import { IsPositivePipe } from '../pipes/is-positive.pipe';
 @Controller('episodes')
 export class EpisodesController {
     // one way to tell nest to inject the service in the controller -> is to add a constructor to your class 
@@ -14,7 +14,7 @@ export class EpisodesController {
     @Get()
     findAll(
         @Query('sort') sort: 'asc' | 'desc' = 'desc',
-        @Query('limit', new DefaultValuePipe(100), ParseIntPipe) limit: number, 
+        @Query('limit', new DefaultValuePipe(100), ParseIntPipe, IsPositivePipe) limit: number, 
     ) {
         console.log(sort)
         return this.episodesService.findAll(sort);
