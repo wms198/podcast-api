@@ -99,6 +99,9 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
 
 
+## Follow the video on youtibe of Tech Vision
+###  [NestJS Crash Course: Learn in 25 Minutes](https://www.youtube.com/watch?v=2gtiffE3__U)
+
 ### Create a new project
 
 #### npm install -g nestjs/cli 
