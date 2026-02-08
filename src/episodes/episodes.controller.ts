@@ -1,8 +1,11 @@
-import { Body, Controller, Post, Get, Query, Param, HttpException, HttpStatus, NotFoundException, ParseIntPipe, DefaultValuePipe, ValidationPipe } from '@nestjs/common';
+import { Body, Controller, Post, Get, Query, Param, HttpException, HttpStatus, NotFoundException, ParseIntPipe, DefaultValuePipe, ValidationPipe, UseGuards } from '@nestjs/common';
 import { EpisodesService } from './episodes.service';
 import { CreateEpisodeDto } from './dto/create-episode.dto';
 import { ConfigService } from '../config/config.service';
 import { IsPositivePipe } from '../pipes/is-positive.pipe';
+import { ApiKeyGuard } from 'src/guards/api-key.guard';
+
+@UseGuards(ApiKeyGuard) // how to do authentication
 @Controller('episodes')
 export class EpisodesController {
     // one way to tell nest to inject the service in the controller -> is to add a constructor to your class 
